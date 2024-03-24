@@ -1,4 +1,4 @@
-package com.kmsolutions;
+package com.kmsolutions.spreadsheet;
 
 import com.kmsolutions.exceptions.FileNotFound;
 import com.kmsolutions.exceptions.MaximumFileColumnsExceeded;
@@ -14,6 +14,9 @@ import java.util.Map;
 
 /**
  * Responsible for parsing given csv file.
+ * <p>
+ * User: KatlegoM
+ * Date: 2024/03/21
  */
 public class CSVParser {
     private static final String CSV_DELIMITER = ",";

@@ -1,4 +1,4 @@
-package com.kmsolutions;
+package com.kmsolutions.spreadsheet;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,6 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Responsible for writing csv file contents to a text file format.
+ * <p>
+ * User: KatlegoM
+ * Date: 2024/03/21
  */
 public class SpreadSheetWriter {
     private final String outputFilename;

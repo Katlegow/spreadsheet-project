@@ -1,5 +1,6 @@
 package com.kmsolutions;
 
+import com.kmsolutions.spreadsheet.SpreadSheetWriter;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

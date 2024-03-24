@@ -1,4 +1,4 @@
-package com.kmsolutions;
+package com.kmsolutions.spreadsheet;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 
 /**
  * Responsible for performing calculations on calculable cells.
+ * <p>
+ * User: KatlegoM
+ * Date: 2024/03/21
  */
 public class SpreadSheetCalculator {
     private final Map<String, Float> MEMO = new HashMap<>();

@@ -2,6 +2,8 @@ package com.kmsolutions;
 
 import com.kmsolutions.exceptions.FileNotFound;
 import com.kmsolutions.exceptions.MaximumFileColumnsExceeded;
+import com.kmsolutions.spreadsheet.CSVParser;
+import com.kmsolutions.spreadsheet.ParsedCSV;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

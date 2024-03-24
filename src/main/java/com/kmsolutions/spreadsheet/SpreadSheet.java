@@ -1,7 +1,10 @@
-package com.kmsolutions;
+package com.kmsolutions.spreadsheet;
 
 /**
  * This class serves as the application container.
+ * <p>
+ * User: KatlegoM
+ * Date: 2024/03/21
  */
 public class SpreadSheet {
     private final String inputFileName;
