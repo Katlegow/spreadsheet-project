@@ -24,6 +24,14 @@ Invoke the application, passing it `abosulte path` to input and output directory
 
 The above example will run the project and output the spreadsheet on the console also to output file destination provided.
 
+For an example given the below csv file;
+
+![testcsv.png](docs%2Ftestcsv.png)
+
+Will output the following on the console and the output file given;
+
+![testresults.png](docs%2Ftestresults.png)
+
 ## Runing tests
 
     mvn clean test
