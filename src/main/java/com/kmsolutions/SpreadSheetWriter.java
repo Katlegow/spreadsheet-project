@@ -6,12 +6,23 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Responsible for writing csv file contents to a text file format.
+ */
 public class SpreadSheetWriter {
     private final String outputFilename;
     private final List<List<String>> records;
     private final int width;
     private final int largestColumn;
 
+    /**
+     * Constructor.
+     *
+     * @param width columns width.
+     * @param largestColumns row with most column's length.
+     * @param outputFilename file to write output contents to.
+     * @param records list of parsed csv contents.
+     */
     public SpreadSheetWriter(
             int width,
             int largestColumns,
@@ -23,6 +34,11 @@ public class SpreadSheetWriter {
         this.largestColumn = largestColumns;
     }
 
+    /**
+     * Writes to the given output file.
+     *
+     * @return Formatted file content to a given output file.
+     */
     public String write() {
         StringBuilder builder = new StringBuilder();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilename))) {
@@ -34,6 +50,11 @@ public class SpreadSheetWriter {
         return builder.toString();
     }
 
+    /**
+     * Prepares text file contents as string then just write once instead of multiple writes per column.
+     *
+     * @param builder formatted contents container.
+     */
     private void prepareContents(StringBuilder builder) {
         AtomicInteger rows = new AtomicInteger(1);
         records.forEach((record) -> {
@@ -61,6 +82,12 @@ public class SpreadSheetWriter {
         });
     }
 
+    /**
+     * Formats number columns.
+     *
+     * @param colum column to format.
+     * @return formatted column if is a number other column as is.
+     */
     private String formatNumber(String colum) {
         try {
             float v = Float.parseFloat(colum);
@@ -70,6 +97,13 @@ public class SpreadSheetWriter {
         }
     }
 
+    /**
+     * Adds padding to a column based on the given alignment.
+     *
+     * @param alignment specifies where padding should be added.
+     * @param column column to be padded or aligned.
+     * @return formatted column.
+     */
     private String pad(Alignment alignment, String column) {
         final String padding = " ".repeat(width - column.length());
         return switch (alignment) {
@@ -79,6 +113,12 @@ public class SpreadSheetWriter {
         };
     }
 
+    /**
+     * Determines the alignment of the given column.
+     *
+     * @param column column content to determine alignment for.
+     * @return column alignment.
+     */
     private Alignment getAlignment(String column) {
         if (column == null) {
             return Alignment.NONE;

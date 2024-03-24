@@ -1,5 +1,8 @@
 package com.kmsolutions;
 
+/**
+ * This class serves as the application container.
+ */
 public class SpreadSheet {
     private final String inputFileName;
     private final String outputFileName;

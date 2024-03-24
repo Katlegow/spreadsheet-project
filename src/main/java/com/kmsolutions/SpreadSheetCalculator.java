@@ -6,9 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+/**
+ * Responsible for performing calculations on calculable cells.
+ */
 public class SpreadSheetCalculator {
     private final Map<String, Float> MEMO = new HashMap<>();
 
+    /**
+     * Performs calculations on calculable cells.
+     * @param parsedCSV parsed csv contents
+     * @return parsed csv contents with calculated values, calculable cells are now replaced by the values
+     */
     public ParsedCSV calculate(ParsedCSV parsedCSV) {
         List<List<String>> records = parsedCSV.records();
         Map<String, String> cells = parsedCSV.cells();
@@ -44,6 +52,13 @@ public class SpreadSheetCalculator {
         };
     }
 
+    /**
+     * Performs multiplication operation on given operands
+     *
+     * @param cells individual csv cells and their values, e.g, A1 -> 2, B2 1.5 etc.
+     * @param operands list of operands cells, e.g, [A1, B1]
+     * @return product performed on operands' results.
+     */
     private Float prod(Map<String, String> cells, String... operands) {
         float prod = 1;
         for (String operand : operands) {
@@ -65,6 +80,13 @@ public class SpreadSheetCalculator {
         return prod;
     }
 
+    /**
+     * Performs addition operation on given operands
+     *
+     * @param cells individual csv cells and their values, e.g, A1 -> 2, B2 1.5 etc.
+     * @param operands list of operands cells, e.g, [A1, B1]
+     * @return additions performed on operands' results.
+     */
     private Float sum(Map<String, String> cells, String... operands) {
         float sum = 0;
         for (String operand : operands) {

@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Responsible for parsing given csv file.
+ */
 public class CSVParser {
     private static final String CSV_DELIMITER = ",";
     private static final int MAX_COLUMNS = 25;
@@ -21,6 +24,11 @@ public class CSVParser {
         this.fileName = fileName;
     }
 
+    /**
+     * Parses the csv file into list of records, individual cells and other metadata.
+     *
+     * @return Parsed csv contents.
+     */
     public ParsedCSV parseCSV() {
         List<List<String>> records = new ArrayList<>();
         Map<String, String> cells = new HashMap<>();
